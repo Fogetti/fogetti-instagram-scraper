@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Instagram Scraper - StartPage</title>
+</head>
+<body>
+	Hello <span wicket:id="message">Message goes here</span>
+	<form wicket:id="dynamicForm">
+		<span wicket:id="mediaPanel">
+			<div wicket:id="feedback">[Feedback Panel]</div>
+			<table>
+		        <thead>
+		            <tr>
+		            	<th>Media IDs</th>
+		            </tr>
+		        </thead>
+		        <tbody>
+		            <tr wicket:id="mediaIds">
+		            	<td><input type="text" wicket:id="mediaId" /></td>
+		            </tr>  
+		        </tbody>  
+		    </table>
+	    </span>
+	    <div>
+		    <span>
+				<input type="submit" value="Add Media ID +" wicket:id="addButton"/>
+			</span>
+			<span>
+				<input type="submit" value="Send IDs >" wicket:id="sendButton"/>
+			</span>
+		</div>
+	</form>
+</body>
+</html>
