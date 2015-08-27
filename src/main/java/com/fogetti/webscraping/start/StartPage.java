@@ -18,7 +18,7 @@ public class StartPage extends WebPage {
     private static final Logger logger = LoggerFactory.getLogger(InstagramServiceFactory.class);
 	private static final long serialVersionUID = -4008891865507010138L;
 	private final IInstagramFactory factory;
-	
+
 	public StartPage(IInstagramFactory factory) {
 		this.factory = factory;
 	}
@@ -33,24 +33,16 @@ public class StartPage extends WebPage {
 		} catch (InstagramException e) {
 			logger.error("Could not get Instagram user info", e);
 		}
-
 	}
 
 	protected IInstagram buildInstagram() {
 		Token accessToken = InstagramSession.get().getAccessToken();
-		System.out.println("Access Token :: " + accessToken.getToken());
 		IInstagram instagram = factory.create(accessToken);
 		return instagram;
 	}
 
 	protected void initializePageContent(IInstagram instagram) throws InstagramException {
 		UserInfo userInfo = instagram.getCurrentUserInfo();
-		
-		System.out.println("***** User Info ******");
-		System.out.println("Username : " + userInfo.getData().getUsername());
-		System.out.println("First Name : " + userInfo.getData().getFirst_name());
-		System.out.println("Last Name : " + userInfo.getData().getLast_name());
-		System.out.println("Website : " + userInfo.getData().getWebsite());
 		add(new Label("message", userInfo.getData().getUsername()));
 	}
 

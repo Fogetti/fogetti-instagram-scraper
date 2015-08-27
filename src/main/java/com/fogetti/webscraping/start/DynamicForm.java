@@ -30,8 +30,8 @@ public class DynamicForm extends Form<Object> {
 	}
 	
 	@Override
-	public void onConfigure() {
-		super.onConfigure();
+	public void onInitialize() {
+		super.onInitialize();
 		
 		final FeedbackPanel feedback = new FeedbackPanel("feedback");
 		

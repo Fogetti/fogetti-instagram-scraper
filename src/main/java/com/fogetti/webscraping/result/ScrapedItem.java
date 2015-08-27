@@ -12,7 +12,7 @@ public class ScrapedItem implements Serializable {
 	private Integer commentCount;
 	private String mentionedUrl;
 	private String mentionedBio;
-	private String followerCount;
+	private Integer followerCount;
 	
 	public String getUrl() {
 		return url;
@@ -50,10 +50,10 @@ public class ScrapedItem implements Serializable {
 	public void setMentionedBio(String mentionedBio) {
 		this.mentionedBio = mentionedBio;
 	}
-	public String getFollowerCount() {
+	public Integer getFollowerCount() {
 		return followerCount;
 	}
-	public void setFollowerCount(String followerCount) {
+	public void setFollowerCount(Integer followerCount) {
 		this.followerCount = followerCount;
 	}
 }

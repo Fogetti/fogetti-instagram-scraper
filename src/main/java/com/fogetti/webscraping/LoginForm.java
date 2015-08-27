@@ -1,8 +1,8 @@
 package com.fogetti.webscraping;
 
-import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.StatelessForm;
 
-public class LoginForm extends Form<String> {
+public class LoginForm extends StatelessForm<String> {
 	
 	private static final long serialVersionUID = -5185996947826161937L;
 

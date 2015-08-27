@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
+import org.jinstagram.exceptions.InstagramException;
 
 import com.fogetti.webscraping.service.IInstagram;
 import com.fogetti.webscraping.start.Selection;
@@ -67,8 +68,27 @@ public class ResultPage extends WebPage {
 
 	List<ScrapedItem> buildResults() {
 		ArrayList<ScrapedItem> results = new ArrayList<>();
-		results.add(new ScrapedItem());
+		try {
+			build(results);
+		} catch(InstagramException e) {
+			error(e.getMessage());
+		}
 		return results;
+	}
+
+	protected void build(ArrayList<ScrapedItem> results) throws InstagramException {
+		for (Selection selection : mediaIds) {
+			String mediaId = selection.getMediaId();
+			ScrapedItem item = new ScrapedItem();
+			item.setUrl(instagram.getUrl(mediaId));
+			item.setContent(instagram.getContent(mediaId));
+			item.setLikeCount(instagram.getLikeCount(mediaId));
+			item.setCommentCount(instagram.getCommentCount(mediaId));
+			item.setMentionedUrl(instagram.getMentionedUrl(mediaId));
+			item.setMentionedBio(instagram.getMentionedBio(mediaId));
+			item.setFollowerCount(instagram.getFollowerCount(mediaId));
+			results.add(item);
+		}
 	}
 
 }

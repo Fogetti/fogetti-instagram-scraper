@@ -6,6 +6,9 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 
+import com.fogetti.webscraping.result.ResultPage;
+import com.fogetti.webscraping.start.StartPage;
+
 public class Scraper extends WebApplication {
 
 	@Override
@@ -22,6 +25,9 @@ public class Scraper extends WebApplication {
 	public void init()
 	{
 		super.init();
+		mountPage("/login", LoginPage.class);
 		mountPage("/callback", OAuthCallbackPage.class);
+		mountPage("/start", StartPage.class);
+		mountPage("/result", ResultPage.class);
 	}
 }

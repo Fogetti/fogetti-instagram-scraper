@@ -24,4 +24,5 @@ final class LoginButton extends Button {
 	public void onSubmit() {
 		throw new RestartResponseAtInterceptPageException(new OAuthRedirectPage(service.getAuthorizationUrl(EMPTY_TOKEN), 1));
 	}
+	
 }
