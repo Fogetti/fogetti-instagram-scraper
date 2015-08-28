@@ -17,8 +17,7 @@ import com.fogetti.webscraping.service.IInstagram;
 public class InstagramAdapter implements IInstagram, Serializable {
 	
 	private static final long serialVersionUID = -9138788034148432935L;
-	//FIXME: transient is not a viable solution because it breaks the back and forward button logic
-	private final transient Instagram delegate;
+	private final Instagram delegate;
 
 	public InstagramAdapter(Instagram delegate) {
 		this.delegate = delegate;
@@ -113,7 +112,7 @@ public class InstagramAdapter implements IInstagram, Serializable {
 		MediaInfoFeed mediaInfo = delegate.getMediaInfo(mediaId);
 		String userId = mediaInfo.getData().getUser().getId();
 		UserInfo userInfo = delegate.getUserInfo(userId);
-		return userInfo.getData().getCounts().getFollwed_by();
+		return userInfo.getData().getCounts().getFollowedBy();
 	}
 
 }

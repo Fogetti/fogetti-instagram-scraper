@@ -3,3 +3,5 @@
 /.settings/
 /.classpath
 /.project
+/deploy/
+/.DS_Store

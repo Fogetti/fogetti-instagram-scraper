@@ -67,6 +67,6 @@ public class StartPageTest {
 		tester.startPage(new StartPage(factory));
 		tester.executeAjaxEvent("dynamicForm:addButton", "onclick");
 		
-		tester.assertVisible("dynamicForm:urlPanel:urls:0:url");
+		tester.assertVisible("dynamicForm:mediaPanel:mediaIds:0:mediaId");
 	}
 }

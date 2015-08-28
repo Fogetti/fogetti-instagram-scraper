@@ -14,7 +14,7 @@ import com.fogetti.webscraping.service.IInstagramService;
 public class InstagramServiceAdapter extends InstagramService implements IInstagramService, Serializable {
 
 	private static final long serialVersionUID = 9127103229507980263L;
-	private final transient InstagramService delegate;
+	private final InstagramService delegate;
 	
 	public InstagramServiceAdapter(InstagramApi api, OAuthConfig config, InstagramService delegate) {
 		super(api, config);
